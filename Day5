@@ -1,0 +1,109 @@
+#Heads or Tails
+import random
+
+random_num = random.randint(0,1)
+
+if random_num == 0:
+	print("Tails")
+else:
+	print("Heads")
+
+
+##Who's Paying
+import random
+# Split string method
+names_string = input("Give me everybody's names, separated by a comma. ")
+names = names_string.split(", ")
+# 🚨 Don't change the code above 👆
+
+#Write your code below this line 👇
+num_items = len(names)
+random_person = random.randint(0, num_items - 1)
+
+print(f"{names[random_person]} is going to buy the meal today!")
+
+
+################## Treasure Map  #########################
+# 🚨 Don't change the code below 👇
+row1 = ["⬜️","⬜️","⬜️"]
+row2 = ["⬜️","⬜️","⬜️"]
+row3 = ["⬜️","⬜️","⬜️"]
+map = [row1, row2, row3]
+print(f"{row1}\n{row2}\n{row3}")
+position = input("Where do you want to put the treasure? ")
+# 🚨 Don't change the code above 👆
+
+#Write your code below this row 👇
+col = position[0]
+row = position[1]
+#indices starts 0, so need to -1
+col = int(col) - 1
+#indices starts 0, so need to -1
+row = int(row) - 1
+
+map[row][col] = 'X'
+
+#Write your code above this row 👆
+
+# 🚨 Don't change the code below 👇
+print(f"{row1}\n{row2}\n{row3}")
+######################################################################################
+
+
+
+#Project of the Day
+###############################ROCK, PAPER, SCISSORS######################################
+import random
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+move = [rock, paper, scissors]
+human = int(input("What do you choose ? Type 0 rock, 1 paper, or 2 scissors: "))
+computer = random.randint(0,2)
+
+if human >= 3:
+	print('Invaild Move, You Lose!')
+else:
+	if human == computer:
+		print(f"You Choose:\n {move[human]}")
+		print(f"Coomputer Choose:\n {move[computer]}")
+		print("Tie")
+	elif human == 0 and computer == 2:
+		print(f"You Choose:\n {move[human]}")
+		print(f"Computer Choose:\n {move[computer]}")
+		print('You win!')
+	elif human == 1 and computer == 0:
+		print(f"You Choose:\n {move[human]}")
+		print(f"Computer Choose:\n {move[computer]}")
+		print('You win!')
+	elif human == 2 and computer == 1:
+		print(f"You Choose:\n {move[human]}")
+		print(f"Computer Choose:\n {move[computer]}")
+		print('You win!')
+	else:
+		print(f"You Choose:\n {move[human]}")
+		print(f"Computer Choose:\n {move[computer]}")
+		print('You Lose!!')
